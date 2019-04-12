@@ -1,0 +1,51 @@
+<div>
+    {{> nav}}
+    {{> search}}
+</div>
+
+<link rel="stylesheet" type="text/css" href="/public/css/home.css">
+
+{{#each data}}
+        <article class = "book-tag">
+            <h1 class = "book-name">{{this.name}}</h1>
+            <!-- Rental Date, if applicable -->
+            {{#if this.rent}} 
+                <script>
+                    var ret_date = new Date("{{this.return_date}}")
+                    var day = ret_date.getDate()
+                    var month = ret_date.getMonth() + 1
+                    var year = ret_date.getFullYear()
+                    document.write("<h3 class = \"rent\">Rental due: " + month + "/" + day + "/" + year + "</h3>")
+                </script>
+            {{/if}}
+            <!-- Price, formatted correctly -->
+            <script>
+                p = parseFloat({{this.price}}).toFixed(2);
+                document.write("<h3 class = \"price\">Price: $" + p + "<\h3>")
+            </script>
+            <h3 class = "condition">Condition: {{this.condition}}</h3>
+            <br><br>
+            <script>
+                var post_date = new Date("{{this.date_posted}}")
+                var day = post_date.getDate()
+                var month = post_date.getMonth() + 1
+                var year = post_date.getFullYear()
+                document.write("<h3 class = \"date\">Date Posted: " + month + "/" + day + "/" + year + "</h3>")
+            </script>
+            {{#if this.courses.length}}
+                {{#ifPlural this.courses.length}}
+                    <h3 id = "course-header">Courses: </h3>
+                {{else}}
+                    <h3 id = "course-header">Course: </h3>
+                {{/ifPlural}}
+            {{else}}
+                <h3 id = "course-header">No Courses Specified</h3>
+            {{/if}}
+            {{#each this.courses}}
+                <p class= "course">{{this}}</p>
+            {{/each}}
+            <br>
+        </article>
+{{else}}
+    <h2>No Books Available at this time</h2>
+{{/each}}
