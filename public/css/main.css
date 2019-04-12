@@ -1,0 +1,56 @@
+
+/* Please add your own! */
+
+/*
+ * Platinum: #EEE4E1
+ * Dark Cerulean #1B4079 **
+ * Midnight Green #124559
+ */
+
+body {
+    background-color: rgb(220, 220, 220)
+}
+
+.container {
+    text-align: center;
+    font-family: Cambria;
+    /*color: #1B4079;*/
+}
+
+/*
+ * Changes navbar and book tag spacing
+ */
+@media(max-width: 1225px) {
+    .nav a { padding: 20px 35px 20px 35px !important; }
+    .price { padding-left: 20% !important; }
+    .condition { padding-right: 20% !important; }
+    .date { padding-left: 20% !important; }
+    #course-header { padding-left: 20% !important; }
+}
+
+@media (max-width: 1050px) {
+    .nav a { padding: 20px 18px 20px 18px !important; }
+    .price { padding-left: 15% !important; }
+    .condition { padding-right: 15% !important; }
+    .date { padding-left: 15% !important; }
+    #course-header { padding-left: 15% !important; }
+}
+
+@media(max-width: 800px) {
+    .nav a { padding: 20px 2px 20px 2px !important; }
+    .price { padding-left: 10% !important; }
+    .condition { padding-right: 10% !important; }
+    .date { padding-left: 10% !important; }
+    #course-header { padding-left: 10% !important; }
+}
+
+@media(max-width: 590px) {
+    .nav a { padding: 0px 2px 5px 2px !important ;}
+    .nav { text-align: left !important ; }    
+    .price { padding-left: 5% !important; }
+    .condition { padding-right: 5% !important; }
+    .date { padding-left: 5% !important; }
+    .course {padding-left: 1px !important; }
+    #course-header { padding-left: 5% !important; }
+    #add-book {margin-top: 60px !important; }
+}

@@ -1,0 +1,71 @@
+article {
+    border-radius: 8px;
+    border: 2px solid #1B4079;
+    /*padding: 0px;*/
+    display: inline-block;
+    width: 65%;
+    padding-top: -20px;
+    background-color: rgb(250, 250, 250);
+    margin-bottom: 30px;
+}
+
+.book-name {  
+    color: rgb(250, 250, 250);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-top: 0px;
+    padding-top: 25px;
+    padding-left: 5px;
+    padding-bottom: 25px;
+    margin: -1px;
+    background-color: #1B4079;
+}
+
+.rent {
+    text-align: center;
+    margin: 0px;
+    margin-right: -1px;
+    padding-top: 25px;
+    color: rgb(199, 0, 0);
+}
+
+.price {
+    float: left;
+    padding-left: 25%;
+    margin: 0px;
+    margin-top: 20px;
+}
+
+.condition {
+    float: right;
+    margin: 0px;
+    padding-right: 25%;
+}
+
+.date {
+    display: block;
+    text-align: left;
+    padding-left: 25%;
+}
+
+#course-header {
+    float:left;
+    text-align: left;
+    padding-left: 25%;
+    padding-right: 0px;
+}
+
+.course {
+    float:left;
+    text-align: left;
+    padding-left: 5px;
+    padding-top: 6px;
+}
+
+.course:first-of-type {
+    padding-left: 10px;
+}
+
+.course:not(:last-of-type):after {
+    content: ',';
+}

@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="/public/css/search.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+
+
+<script>
+    $(document).ready( function() {
+        $('#add-book').click(function() {
+            window.location.href = "/add-book";
+        });
+
+        $('#search-input').on('change keyup', function() {
+            var input = $(this).val().trim().toLowerCase();
+
+            $('.book-tag').each(function(i, obj) {
+                var book_name = obj.getElementsByClassName('book-name')[0].innerHTML.toLowerCase();
+                var courses = obj.getElementsByClassName('course');
+                var keep = book_name.startsWith(input)
+                for (i = 0; i < courses.length; i++) {
+                    let course_name = courses[i].innerHTML.toLowerCase();
+                    if (course_name.startsWith(input))
+                        keep = true
+                }      
+
+                obj.style.display = keep ? "inline-block" : "none";
+            });
+        });
+    });
+</script>
+
+<label id = "search-label">Search: </label>
+<input id = "search-input" placeholder = "Book Name or Course Code" type = "text" autocomplete = "off"> 
+<button id = "add-book">Add Book</button>
